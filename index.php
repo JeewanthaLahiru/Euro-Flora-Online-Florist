@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/index2.css">
     <title>Euro Flora</title>
 </head>
 <body>
@@ -24,6 +24,25 @@
 </div>
 
 <div class="body">
+    <div class="section_two">
+        <h1><span>Malshan Flora</span> your online florist to deliver flowers in kotikawatta</h1>
+    </div>
+
+    <div class="section_three">
+        <div class="imageLeft">
+            <img src="images/euroflora-florist-flower-bouquet.jpg" alt="">
+            <div>
+                <h4>SEPTEMBER OFFERS: TODAY -15%</h4>
+                <hr>
+                <p>Delivery service included</p>
+            </div>
+        </div>
+        <div class="imageRight">
+            <img src="images/cheyanne.jpg" alt="">
+        </div>
+    </div>
+    <hr><hr>
+
     <div class="grid-container">
         <?php
             $sql = "SELECT * FROM products";

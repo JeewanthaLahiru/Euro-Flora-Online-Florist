@@ -74,6 +74,12 @@ body{
     color: #805850;
     padding: 15px 20px;
 }
+.section_two span{
+    font-size: 150%;
+}
+.section_two h1{
+    font-size: 150%;
+}
 
 
 .grid-container{
@@ -118,4 +124,27 @@ body{
     .grid-container{
         grid-template-columns: auto;
     }
+}
+
+.section_three{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.imageLeft{
+    position: relative;
+}
+.imageLeft div{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    background-color: rgba(255,255,255,0.7);
+    padding: 10px;
+    text-align: center;
+}
+.imageLeft hr{
+    margin: 10px;
+}
+.imageRight{
+    position: relative;
 }
