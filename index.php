@@ -15,7 +15,7 @@
     <a href=""><i class="fa fa-phone" aria-hidden="true"></i> Order by phone</a>
     <a href=""><i class="fa fa-cogs" aria-hidden="true"></i> How to order</a>
     <a href=""><i class="fa fa-camera" aria-hidden="true"></i> Gallery</a>
-    <a href=""><i class="fa fa-th-large" aria-hidden="true"></i> The florist</a>
+    <a href="addproduct.php"><i class="fa fa-th-large" aria-hidden="true"></i> The florist</a>
     <a href=""><i class="fa fa-envelope" aria-hidden="true"></i> Contact us</a>
     <a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
 </div>
