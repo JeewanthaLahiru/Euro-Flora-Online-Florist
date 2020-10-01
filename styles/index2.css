@@ -148,3 +148,17 @@ body{
 .imageRight{
     position: relative;
 }
+
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+.pagination a{
+    padding: 5px;
+    margin: 5px;
+    background-color: teal;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+}

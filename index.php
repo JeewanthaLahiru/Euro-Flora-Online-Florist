@@ -45,7 +45,20 @@
 
     <div class="grid-container">
         <?php
-            $sql = "SELECT * FROM products";
+
+            if(!isset($_REQUEST['pgn'])){
+                $page = 1;
+            }else{
+                $page = $_REQUEST['pgn'];
+            }
+            $results_per_page = 4;
+            $starting_number = ($page-1)*$results_per_page;
+            $sql0 = "SELECT * FROM products";
+            if($stat=$conn->prepare($sql0)){
+                $stat->execute();
+                $number_of_results = $stat->rowCount();
+            }
+            $sql = "SELECT * FROM products LIMIT ".$starting_number.",".$results_per_page;
             if($stmt = $conn->prepare($sql)){
                 $stmt->execute();
                 while($row = $stmt->fetch()){
@@ -59,7 +72,23 @@
             }else{
                 echo "there was an error";
             }
+            if(isset($_REQUEST['pgn'])){
+                $lest_page = $_REQUEST['pgn']-1;
+                $increase_page = $_REQUEST['pgn']+1;
+            }
         ?>
+    </div>
+
+    <div class="pagination">
+        <a href="<?php if(isset($_REQUEST['pgn'])){if($page==1){ echo 'index.php';}else{ echo 'index.php?pgn='.$lest_page;}} ?>"><i class='fa fa-caret-left' aria-hidden='true'></i></a>
+        <?php
+            $number_of_pages = ceil($number_of_results/$results_per_page);
+            for($x=1;$x<=$number_of_pages;$x++){
+                echo "<a href='index.php?pgn=".$x."'>".$x."</a>";
+            }
+            
+        ?>
+        <a href="<?php if(isset($_REQUEST['pgn'])){if($page<=$number_of_pages){ echo 'index.php';}else{ echo 'index.php?pgn='.$increase_page;}}else{ echo 'index.php?pgn=2'; } ?>"><i class='fa fa-caret-right' aria-hidden='true'></i></a>
     </div>
 </div>
 
