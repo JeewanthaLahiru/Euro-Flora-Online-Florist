@@ -1,3 +1,6 @@
+<?php
+    include "connection.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +21,27 @@
     <a href="addproduct.php"><i class="fa fa-th-large" aria-hidden="true"></i> The florist</a>
     <a href=""><i class="fa fa-envelope" aria-hidden="true"></i> Contact us</a>
     <a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+</div>
+
+<div class="body">
+    <div class="grid-container">
+        <?php
+            $sql = "SELECT * FROM products";
+            if($stmt = $conn->prepare($sql)){
+                $stmt->execute();
+                while($row = $stmt->fetch()){
+                    echo "<div class='grid-item'>";
+                    echo "<img src='data:".$row['image_mime'].";base64,".base64_encode($row['image_data'])."'>";
+                    echo "<h3>".$row['product_name']."</h3>";
+                    echo "<p>".$row['product_description']."</p>";
+                    echo "<h4>".$row['product_price']."</h4>";
+                    echo "</div>";
+                }
+            }else{
+                echo "there was an error";
+            }
+        ?>
+    </div>
 </div>
 
 
